@@ -5,7 +5,7 @@ const PORT = process.env.port || process.env.PORT || 3978;
 
 
 // Create bot and add dialogs - you will need to setup your bot to get these.
-var bot = new builder.BotConnectorBot({
+var bot = new builder.ChatConnector({
     appId: '4b8f4189-f508-4924-a9b8-a6eb6fe88b21',
     appPassword: 'xSq1Tq95crj4hC5njprh8xa'
 });
