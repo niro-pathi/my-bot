@@ -55,5 +55,21 @@ bot.dialog('/', [
                console.error("No response.");
                next();               
             }
-    }
-]);
+    },
+    function(session,results,next)
+    {
+                
+         if (session.dialogData.isCustomer===false) {
+              var text = "I am connecting you to an agent who will be able to help you further.";
+              console.log(text);
+              localSession.send(text);
+              //End the dialog - End of Demo
+              session.endDialog();           
+         }
+         else
+         {
+            session.send("Let me see you need help with... "+results.response);
+            //End the dialog - End of Demo
+            session.endDialog();
+         }         
+    }]);
