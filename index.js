@@ -67,9 +67,7 @@ bot.dialog('/',function(session)
             session.send("Let me see you need help with... "+results.response);
             //End the dialog - End of Demo
             session.endDialog();
-         }
-         
-         
+         }                  
         });
 
 // Setup Restify Server
