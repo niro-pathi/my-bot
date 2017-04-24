@@ -10,10 +10,13 @@ var bot = new builder.ChatConnector({
     appPassword: 'xSq1Tq95crj4hC5njprh8xa'
 });
 
+bot.dialog('/', function (session) {
+    session.send("Hello World");
+});
 
 //Dialogs definition:
 //This is where you create the script for the dialog, the script can be static or dynamic.
-bot.add('/', [function(session)
+bot.dialog('/',function(session)
         {
             //Opening Dialog to greet the user
             builder.Prompts.text(session,"Thank you for getting in touch today! If you are an existing customer type in your account number, if not then just type 'no'?");
@@ -67,7 +70,7 @@ bot.add('/', [function(session)
          }
          
          
-        }]);
+        });
 
 // Setup Restify Server
 var server = restify.createServer();
